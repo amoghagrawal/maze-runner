@@ -1,0 +1,77 @@
+<html><head><base href=".">
+  <title>Maze Runner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="menu-screen">
+    <h1 id="menu-title">MAZE RUNNER</h1>
+    <button id="start-button">START GAME</button>
+    <button id="settings-button">SETTINGS</button>
+  </div>
+  <div id="game-container">
+    <canvas id="maze" width="400" height="400"></canvas>
+    <div id="stats">
+      <div>Level: <span id="level">1</span></div>
+      <div>Moves: <span id="moves">0</span>/<span id="max-moves">20</span></div>
+      <div>Weapons: <span id="weapons">1</span></div> 
+      <div>Score: <span id="score">0</span></div>
+    </div>
+    <div id="message"></div>
+  </div>
+
+  <button id="help-button">Help</button>
+  <button id="return-menu">Return to Menu</button>
+
+  <div id="help-modal">
+    <button id="close-help">&#xd7;</button>
+    <h2>How to Play</h2>
+    <ul>
+      <li>Use arrow keys to move through the maze</li>
+      <li>Reach the red circle to complete the level</li>
+      <li>Collect bombs to get weapons</li>
+      <li>Press &apos;K&apos; near enemies (up to 2 blocks away) to eliminate them (requires weapons)</li>
+      <li>Avoid red circles (enemies) or eliminate them</li>
+      <li>Collect star cookies for +1 score each</li>
+      <li>Complete levels to face more challenges</li>
+    </ul>
+  </div>
+
+  <div id="settings-modal">
+    <button id="close-settings">&#xd7;</button>
+    <h2>Settings</h2>
+    <div class="settings-option">
+      <label for="sound-toggle">Sound Effects</label>
+      <input type="checkbox" id="sound-toggle" checked>
+    </div>
+    <div class="settings-option">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="normal" selected>Normal</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="level-complete-modal">
+    <div class="level-popup-title">Level Complete!</div>
+    <p>Score: <span id="popup-score">0</span></p>
+    <button class="level-popup-button" id="next-level-button">Next Level</button>
+  </div>
+
+  <div id="level-failed-modal">
+    <div class="level-popup-title">Out of Moves!</div>
+    <p>Try to reach the goal within the move limit</p>
+    <button class="level-popup-button" id="retry-level-button">Try Again</button>
+  </div>
+
+  <div id="game-over-modal">
+    <div class="level-popup-title">Game Over!</div>
+    <p>You were caught by an enemy</p>
+    <button class="level-popup-button" id="retry-after-death-button">Try Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
